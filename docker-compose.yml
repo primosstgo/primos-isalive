@@ -1,0 +1,7 @@
+services: 
+  app: 
+    build: .
+    image: primos-isalive
+    container_name: primos-isalive
+    ports: 
+      - 8083:8083
