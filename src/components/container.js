@@ -2,7 +2,7 @@ import moment from 'moment';
 import './../style/containerStatus.css';
 
 export default function Container({ data }) {
-  let ports = []
+  let ports = [];
   for (let [i, port] of data.ports.entries()) {
     if (i > 0)
       ports.push('\u00A0')
@@ -14,12 +14,26 @@ export default function Container({ data }) {
 
   return (
     <div className='container'>
-      <div className='grid'>
-        <span style={{ fontSize: '1.5em' }}>{data.name}</span>
-        <span>{ports}</span>
-        <span><i>{data.status}</i>&nbsp;{moment(data.status_time).fromNow()}</span>
-        <span className={statusIconClass}></span>
-      </div>
+      <table className='container-table'>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Puertos</th>
+            <th>Estado</th>
+            <th>Tiempo</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{data.name}</td>
+            <td>{ports}</td>
+            <td>{data.status}</td>
+            <td>{moment(data.status_time).fromNow()}</td>
+            <td><span className={statusIconClass}></span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  )
+  );
 }

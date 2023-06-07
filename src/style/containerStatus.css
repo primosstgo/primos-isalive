@@ -1,8 +1,32 @@
 .green-icon {
-    background-color: green;
-  }
-  
-  .red-icon {
-    background-color: red;
-  }
-  
+  background-color: green;
+}
+
+.red-icon {
+  background-color: red;
+}
+
+.container {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.container-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.container-table th,
+.container-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ffffff;
+}
+
+.container-table th {
+  background-color: #000000;
+}
+
+.container-table td {
+  background-color: #1e1e1e;
+}
