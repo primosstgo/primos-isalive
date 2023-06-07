@@ -1,4 +1,5 @@
 import moment from 'moment';
+import './../style/containerStatus.css';
 
 export default function Container({ data }) {
   let ports = []
