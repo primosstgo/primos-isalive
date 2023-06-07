@@ -1,5 +1,5 @@
 import moment from 'moment';
-import './../style/containerStatus.css';
+import './../style/container-status.css';
 
 export default function Container({ data }) {
   let ports = [];
@@ -9,7 +9,6 @@ export default function Container({ data }) {
     ports.push(<a href={'http://prime.inf.santiago.usm.cl:' + port} target="_blank">{port}</a>)
   }
 
-  // Define CSS classes for the status icon
   const statusIconClass = data.status === "running" ? "green-icon" : "red-icon";
 
   const handleReset = () => {
@@ -18,30 +17,15 @@ export default function Container({ data }) {
   };
 
   return (
-    <div className='container'>
-      <table className='container-table'>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Puertos</th>
-            <th>Estado</th>
-            <th>Tiempo</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
+          <tr className={statusIconClass}>
             <td>{data.name}</td>
             <td>{ports}</td>
             <td>{data.status}</td>
             <td>{moment(data.status_time).fromNow()}</td>
             <td>
-              <span className={statusIconClass}></span>
+              {/*<span className={statusIconClass}></span>*/}
               <button onClick={handleReset} class="button">Reset</button>
             </td>
           </tr>
-        </tbody>
-      </table>
-    </div>
   );
 }

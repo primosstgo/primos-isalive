@@ -16,7 +16,20 @@ export default function App() {
   
   return (
 	  <div class='app'>
-      {value.map( data => <Container data={data} />)}
+      <table className='container-table'>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Puertos</th>
+            <th>Estado</th>
+            <th>Tiempo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {value.map( data => <Container data={data} />)}
+        </tbody>
+      </table>
 		</div>
 	)
 };
