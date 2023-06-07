@@ -1,9 +1,11 @@
 .green-icon {
-  background-color: green;
+  // padding: 0.5em 1em;
+  background-color: rgba(60,179,113,0.5) !important;
 }
 
 .red-icon {
-  background-color: red;
+  // padding: 0.5em 1em;
+  background-color: rgba(255,0,0,0.5) !important;
 }
 
 .button {
