@@ -12,6 +12,11 @@ export default function Container({ data }) {
   // Define CSS classes for the status icon
   const statusIconClass = data.status === "running" ? "green-icon" : "red-icon";
 
+  const handleReset = () => {
+    fetch(`/reset-container/${data.id}`, { method: 'POST' })
+      .then(() => window.location.reload());
+  };
+
   return (
     <div className='container'>
       <table className='container-table'>
@@ -30,7 +35,10 @@ export default function Container({ data }) {
             <td>{ports}</td>
             <td>{data.status}</td>
             <td>{moment(data.status_time).fromNow()}</td>
-            <td><span className={statusIconClass}></span></td>
+            <td>
+              <span className={statusIconClass}></span>
+              <button onClick={handleReset} class="button">Reset</button>
+            </td>
           </tr>
         </tbody>
       </table>
